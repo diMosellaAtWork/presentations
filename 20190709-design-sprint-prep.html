@@ -1,0 +1,91 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="diMosella">
+  <title>data @ knmi</title>
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/white.css">
+
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
+        <textarea data-template>
+          ## Design Sprint Voorbereidingen
+
+          ---
+
+          | Tables        | Are           | Cool  |
+          | ------------- |:-------------:| -----:|
+          | col 3 is      | right-aligned | $1600 |
+          | col 2 is      | centered      |   $12 |
+          | zebra stripes | are neat      |    $1 |
+
+          ---
+
+          ## Strategische Uitdagingen
+          - Carte blanche brain storm
+          ![Brain storm](assets/mindmap.png "Context")<!-- .element height="550px" -->
+
+          ---
+          
+          ## de (business) value van data optimaal benutten
+          
+          ---
+
+          ## Transities (1)
+          1. Portaal
+            1. KDC data naar S3 (isilon leeg)
+            2. (KDC services verhuizen (kelder leeg))
+            3. KDC services vervangen door statische entree
+            4. nieuw dataportaal op basis van linked data
+            5. integratie met CRM / abonnementenservice
+
+          --
+
+          ## Transities (2)
+          2. Organisatie
+            1. nieuwe data editor (Henk stopt)
+            2. nieuwe rollen als KNMI data steward, vakgroep data stewards
+            3. nieuwe structuur met DMP, RDF
+
+          --
+
+          ## Transities (3)
+          3. CRM  
+            1. nieuwe processen account management
+            2. nieuwe CRM-omgeving
+            3. nieuwe abonnementenservice
+          
+          ---
+
+          ## Value van data: hoe groeien en bewaken door transities heen?
+
+          --
+
+          ## Mogelijkheden
+
+          - (proxy)-tussenlaag
+          - SEO
+          - ...
+
+        </textarea>
+      </section>
+    </div>
+  </div>
+  <script src="js/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      history: true,
+      dependencies: [
+        { src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+        { src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } }
+      ]
+    });
+  </script>
+</body>
+
+</html>
