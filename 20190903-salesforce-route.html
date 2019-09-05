@@ -1,0 +1,418 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="diMosella">
+  <title>Salesforce Route</title>
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/dimosella.css">
+
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
+        <textarea data-template>
+          # Salesforce Routes
+
+          ![Salesforce](assets/logo-salesforce-m.svg "Salesforce")<!-- .element height="300px" style="border: none; border-radius: 0.2em;" -->
+
+          ---
+
+          ## In-/Aanleiding
+
+          - ##### KDC status
+
+            <h6>
+
+            - feit: Isilon wordt uitgefaseerd, dus de data migreren
+            - feit: hardware moet uit kelder, dus service migreren
+            - feit: grenzen bij onderhoud / uitbouw, dus andere opbouw service
+
+            </h6>
+
+          - ##### → nieuw KNMI Data Platform
+
+            <h6>
+
+            - wens: sneller verwerken van vragen en opdrachten van gebruikers
+            - wens: beter inzicht in huidige status communicatie en aanvraag
+            - wens: beter inzicht in datagebruik van gebruikers
+            - wens: betaalde meerwaarde-biedende-services
+
+            </h6>
+          
+          ---
+
+          ## Ideeën herbouw
+
+          - ##### Technisch
+
+            <h6>
+
+              - API centraal
+              - platform en infrastructuur waar mogelijk COTS
+
+            </h6>
+
+          - ##### Functioneel
+
+            <h6>
+
+              - gebruikersaccounts
+              - centraal CRM-systeem
+
+            </h6>
+
+          - ##### Inbedding
+
+            <h6>
+
+              - team DataPlatform
+              - team DataServices
+
+            </h6>
+
+          ---
+
+          ## Routes
+
+          <h6>
+
+            - Salesforce biedt Accounts en CRM functies
+            - Is nabouwen data.knmi.nl in Salesforce mogelijk?
+            - → Routes om te verkennen:
+
+          </h6>
+
+          <table class="reveal" style="font-size: 60%; margin-top: 2em;">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Account</th>
+                <th></th>
+                <th>Portal</th>
+                <th></th>
+                <th>DataPlatform</th>
+                <th>Opmerkingen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>1</th>
+                <td>Salesforce</td>
+                <td>→</td>
+                <td>Salesforce</td>
+                <td>←</td>
+                <td>AWS</td>
+                <td class="remark">via Salesforce External Services</td>
+              </tr>
+              <tr>
+                <th>2</th>
+                <td>Salesforce</td>
+                <td>→</td>
+                <td>Salesforce</td>
+                <td>←</td>
+                <td>AWS</td>
+                <td class="remark">via Salesforce Connect</td>
+              </tr>
+              <tr>
+                <th>3</th>
+                <td>Salesforce</td>
+                <td>→</td>
+                <td>Salesforce</td>
+                <td>←</td>
+                <td>AWS</td>
+                <td class="remark">via Salesforce Custom Controller</td>
+              </tr>
+              <tr>
+                <th>4</th>
+                <td>Salesforce</td>
+                <td>→</td>
+                <td>AWS S3</td>
+                <td>←</td>
+                <td>AWS</td>
+                <td class="remark">via Salesforce API</td>
+              </tr>
+            </tbody>
+          </table>
+
+          ---
+
+          ## Route 0: Salesforce basis
+
+          <table class="reveal" style="font-size: 60%; margin-top: 2em;">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Handelingen</th>
+                <th>Bevindingen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>1</th>
+                <td class="remark">Volg aantal tutorials op Trailhead<br/>(officiële documentatie)</td>
+                <td class="remark">
+                  <ul>
+                    <li>opgebouwd uit diverse "trails", modules en projecten</li>
+                    <li>modules beschrijven veelal een geïsoleerd aspect</li>
+                    <li>trails en projecten beschrijven heel specifieke ketens</li>
+                    <li>tutorials komen niet helemaal overeen met systeem</li>
+                    <li>sommige technische id's zijn vertaald en andere niet</li>
+                    <li>lastig online oplossingen te vinden (community)</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>2</th>
+                <td class="remark">Bouw algemene kennis op</td>
+                <td>
+                    ![Ranking](assets/ranking.png "Ranking")<!-- .element height="200px" style="border: none; border-radius: 0.2em;" -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          ---
+
+          ## Route 1: External Services
+
+          <table class="reveal" style="font-size: 60%; margin-top: 2em;">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Handelingen</th>
+                <th>Bevindingen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>1</th>
+                <td class="remark">Volg stappenplan tutorial</td>
+                <td class="remark">
+                  <ul>
+                    <li>zie Route 0.</li>
+                    <li>stappenplan niet in systeem, alleen vanuit tutorial</li>
+                    <li>relatief eenvoudig stappenplan, voornamelijk configureren</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>2</th>
+                <td class="remark">Maak OpenAPI definitie<br />voor zoeken Datasets</td>
+                <td class="remark">
+                  <ul>
+                    <li>InterAgent (Heroku) en Swagger OpenAPI zijn ondersteund</li>
+                    <li>definitie voor searchDatasetMetadata alleen in versie 3.+</li>
+                    <li>enige ondersteunde versie in Salesforce is 2.0 (uit 2017)...</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>3</th>
+                <td class="remark">Verbind met Flows<br/>(visueel verbindingen configureren)</td>
+                <td class="remark">
+                  <ul>
+                    <li>invoervelden en business logica zijn bevat in Flow</li>
+                    <li>Flows integreren in Apps (onduidelijk vanuit documentatie)</li>
+                    <li>resultaat wordt in Salesforce database-velden opgeslagen</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          ---
+
+          ## Intermezzo: Search Dataset Metadata
+
+          <table class="reveal" style="font-size: 60%; margin-top: 2em;">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Handelingen</th>
+                <th>Bevindingen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>1</th>
+                <td class="remark">Bekijk uitvoer API</td>
+                <td class="remark">
+                  <ul>
+                    <li>gegevens in de "summary" structuur matchen niet met data</li>
+                    <li>bij data.knmi.nl lijkt het ophalen van de metadata (server) de trage factor</li>
+                    <li>veel datatypes zijn in JSON gestringified "false", "23", etc.</li>
+                    <li>foutmeldingen zijn HTTP 200 - OK berichten</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>2</th>
+                <td class="remark">Stel API definitie op</td>
+                <td class="remark">
+                  <ul>
+                    <li>searchDatasetMetadata is goed te beschrijven in OpenAPI 3.0.2</li>
+                    <li>automatische conversie naar Swagger 2.0 faalt</li>
+                    <li>handmatig, idem dito</li>
+                    <li>nested objects in URI en combinatoriek niet ondersteund in Swagger 2.0</li>
+                    <li>automatische generatie van API definitie onbruikbaar generiek</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          ---
+
+          ## Route 2: Connect
+
+          <table class="reveal" style="font-size: 60%; margin-top: 2em;">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Handelingen</th>
+                <th>Bevindingen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>1</th>
+                <td class="remark">Volg stappenplan tutorial</td>
+                <td class="remark">
+                  <ul>
+                    <li>via OData protocol, tussen Salesforce organisaties of Custom adapter</li>
+                    <li>data wordt niet in Salesforce opgeslagen</li>
+                    <li>via External Objects wordt data in Salesforce getoond</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>2</th>
+                <td class="remark">Kies protocol voor zoeken</td>
+                <td class="remark">
+                  <ul>
+                    <li>alleen Custom adapter is mogelijk voor searchDatasetMetadata</li>
+                    <li>filteren van data kan door external lookup relaties</li>
+                    <li>externe data is dan "verbonden" met bestaande Salesforce records</li>
+                    <li>filteren van data met zoek-invoervelden lijkt niet voorzien</li>
+                    <li>er zijn diverse iPaas oplossingen voor Salesforce...</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          ---
+
+          ## Route 3: Custom Controller
+
+          <table class="reveal" style="font-size: 60%; margin-top: 2em;">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Handelingen</th>
+                <th>Bevindingen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>1</th>
+                <td class="remark">Ontwikkelen in Apex<br/>(Salesforce backend taal)</td>
+                <td class="remark">
+                  <ul>
+                    <li>uitgebreide extensies voor Visual Studio Code</li>
+                    <li>draait alleen in "(scratch) orgs" op het platform</li>
+                    <li>voor iedere stap (test, build, ...) handmatig synchroniseren</li>
+                    <li>ook handmatig synchroniseren aanpassingen op omgeving</li>
+                    <li>debugging gaat via uitgebreide replay van logging</li>
+                    <li>ook via GitLab scratch orgs aftrappen voor CI/CD</li>
+                    <li>budget-afhankelijke daglimieten voor aantal "scratch orgs"</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>2</th>
+                <td class="remark">Ontwikkelen in LWC<br/>(Lightning Web Components, frontend)</td>
+                <td class="remark">
+                  <ul>
+                    <li>Web Components browser native eindelijk bruikbaar</li>
+                    <li>Lightning Design System: componentbibliotheek en richtlijnen</li>
+                    <li>herbruikbaar, ook voor beheerders</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          ---
+
+          ## Route 4: API
+
+          <table class="reveal" style="font-size: 60%; margin-top: 2em;">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Handelingen</th>
+                <th>Bevindingen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>1</th>
+                <td class="remark">Account informatie via Salesforce API</td>
+                <td class="remark">
+                  <ul>
+                    <li>catalogus heeft weinig binding met Salesforce</li>
+                    <li>informatie Accounts in Salesforce makkelijk via API beschikbaar</li>
+                    <li>de RijksHuisStijl is veel makkelijker te implementeren / onderhouden</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          ---
+
+          ## Uitdagingen
+
+          <h6>
+
+            - Salesforce filosofie / selling point:
+              - haal de ontwikkelaar uit de (operationele, functionele) loop
+              - laat de beheerder de aanpassingen doen
+            - Salesforce heeft significante omvang:
+              - weten wat er beschikbaar is, voor opdelen problemen
+              - verantwoordelijkheden van tools lopen snel door elkaar heen
+              - binnen een org zijn alle Objecten voor alle Apps beschikbaar
+              - geen duidelijke scheiding in data model
+            - KDC helemaal op Salesforce bouwen:
+              - significante investering (RijksHuisStijl?)
+              - vendor lock
+              - verlaagde ontwikkelproductiviteit
+            - Hoe sterk zijn de catalogus- en de accountfunctie echt met elkaar verbonden? 
+
+          </h6>
+
+          ---
+
+        </textarea>
+      </section>
+    </div>
+  </div>
+  <script src="js/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      history: true,
+      center: false,
+      dependencies: [
+        { src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+        { src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } }
+      ]
+    });
+  </script>
+</body>
+
+</html>

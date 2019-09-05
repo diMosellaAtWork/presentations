@@ -188,6 +188,10 @@ body {
 .reveal table tbody tr:last-child td {
   border-bottom: none; }
 
+.reveal table .remark {
+  font-size: 80%;
+}
+
 .reveal sup {
   vertical-align: super;
   font-size: smaller; }
