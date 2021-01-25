@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="author" content="diMosella">
   <title>design sprint @ knmi</title>
-  <link rel="stylesheet" href="css/reveal.css">
-  <link rel="stylesheet" href="css/theme/dimosella.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/dimosella.css">
 
 </head>
 
@@ -195,17 +195,15 @@
       </section>
     </div>
   </div>
-  <script src="js/reveal.js"></script>
-  <script>
-    Reveal.initialize({
+  <script src="dist/reveal.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script>
+		Reveal.initialize({
       history: true,
       center: false,
-      dependencies: [
-        { src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-        { src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } }
-      ]
-    });
-  </script>
+			plugins: [ RevealMarkdown ]
+		});
+	</script>
 </body>
 
 </html>
