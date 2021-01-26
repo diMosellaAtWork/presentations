@@ -1,0 +1,20 @@
+<svg width="1150mm" height="490mm" version="1.1" viewBox="0 0 1150 490" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(410 210)" style="font-size:2.67em; font-family:Source Sans Pro, Helvetica, sans-serif;">
+    <path transform="scale(.265)" d="m149-179v191a189 189 0 0 1 166 187 189 189 0 0 1-137 182c10.7 62.1 22.1 125 32.4 185 183-41.8 307-211 292-398-15-187-165-335-353-347z" style="fill:#ff0055;paint-order:stroke markers fill"/>
+    <path transform="scale(.265)" d="m-234 80.8c-39.3 121-15.2 254 64.3 353 79.8 99.5 204 152 331 140l-31.8-186a189 189 0 0 1-4.25 0.15 189 189 0 0 1-189-189 189 189 0 0 1 6.51-48.3z" style="fill:#444444;paint-order:stroke markers fill"/>
+    <path transform="scale(.265)" d="m100-179c-137 9.09-258 91.4-316 215l177 70a189 189 0 0 1 139-93.8z" style="fill:#cccccc;paint-order:stroke markers fill;stroke:#444;stroke-width:24;"/>
+    <g style="fill:#444;">
+      <text x="185" y="-5">meldingen gedaan bij AP</text>
+      <text x="-400" y="260">meldingen gedaan bij betrokkenen</text>
+      <text x="-250" y="-70">inzageverzoeken</text>
+    </g>
+    <path d="m141 63.7c41.4-5.97 72.2-24.9 93.1-53.2" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:8;stroke:#444444"/>
+    <path d="m-103-55.4c9.77 13 26.2 27.8 45.9 37.9" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:8;stroke:#444444"/>
+    <path d="m-70.3 93c-31.2 7.04-60.8 20.1-74.7 32.1" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:8;stroke:#444444"/>
+    <g style="font-size:2em; font-weight:bold;">
+      <text x="-130" y="-120" fill="#ccc" stroke="#444" stroke-width="3">8</text>
+      <text x="-210" y="210" fill="#444">14</text>
+      <text x="234.05415" y="-50" fill="#f05">20</text>
+    </g>
+  </g>
+</svg>
