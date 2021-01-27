@@ -1,3 +1,11 @@
+# Presentations
+
+- Use {presentation-url}?print-pdf to print a presentation
+- Goto https://dimosella.github.io/presentation/{presentation-file} to show online
+
+- also possible to add plugins, like chart.js and menu
+
+
 <p align="center">
   <a href="https://revealjs.com">
   <img src="https://hakim-static.s3.amazonaws.com/reveal-js/logo/v1/reveal-black-text.svg" alt="reveal.js" width="450">
