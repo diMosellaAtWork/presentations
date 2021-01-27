@@ -3,7 +3,13 @@
 - Use {presentation-url}?print-pdf to print a presentation
 - Goto https://dimosella.github.io/presentation/{presentation-file} to show online
 
-- also possible to add plugins, like chart.js and menu
+- also possible to add plugins, like chart.js and menu; some links:
+  - https://github.com/rajgoel/reveal.js-plugins/tree/master/chart
+  - https://github.com/denehyg/reveal.js-menu/tree/a630970d81ed1242c31821a43a91645af74e56aa
+  - https://www.downloadnewthemes.com/2013/12/controlfrog-meaningful-metrics-template.html
+  - https://github.com/fixanoid/Pretty-Doughtnut
+  - http://jsfiddle.net/nkzyx50o/
+  - https://www.authorcode.com/how-to-add-text-inside-the-doughnut-chart-using-chart-js/
 
 
 <p align="center">
