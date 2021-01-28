@@ -1,0 +1,124 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="diMosella">
+  <title>Datalekken @ Plek</title>
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/dimosella.css">
+
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$"
+        data-background-image="./assets/logo-plek.svg" data-background-size="13%" data-background-repeat="no-repeat"
+        data-background-position="3% 98%" style="font-size:.4em;">
+        <textarea data-template>
+          # Fact sheet <!-- .element style="margin: 0;" -->
+
+          ## presentatie “Datalekken in de automotive sector”
+          
+          ![datalek](assets/datalek.svg "datalek")<!-- .element height="90px" style="border: none; border-radius: 0.2em; margin: 0em;" -->
+
+          <div style="columns: 2; margin: 0 -4em;">
+            
+            ### Wat?
+
+            Urgente reductie van datalekken bij autobedrijven in<br />Amsterdam, Rotterdam en Utrecht
+
+            ### Waarom?
+
+            1. Juridisch kader
+              - verantwoordelijke/verwerker
+
+            1. Risico’s
+              - privacy schending van onze klanten
+              - financiele risico’s voor Plek
+              - imagoschade
+              - kosten (o.m. tijd)
+              - hoofdelijke aansprakelijkheid
+              - Autoriteit Persoonsgegevens/boetes
+
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+
+
+            ### Hoe?
+
+            1. Softie B.V.:
+
+              in gesprek gaan over het oplossen van de problemen met de trage software
+
+              _focus daarbij_: 
+              - tijd → roadmap opstellen (korte, middel, lange termijn)
+              - → acute maatregelen treffen voor zolang het probleem nog niet verholpen is
+
+                <span class="small">(bv. inhouse affiliate van Plek op drukke dagen. Deze persoon kan de lease-aanvragen dan<br/>samen met de klant realiseren,
+                in een decentrale, standalone versie van de software)</span>
+
+                <span class="small">(bv. tijdelijk minder uitgebreide risico-analyse voor lease-aanvragen - minder bescheiden nodig)</span>
+
+            1. Autobedrijven in Amsterdam, Rotterdam en Utrecht:
+
+              in gesprek gaan over privacy-awareness
+            
+              _focus daarbij_:
+              - onder de loep nemen van normale alledaagse handelingen op drukke dagen
+              - welke maatregelen gaan zij nemen om de privacy-awareness te vergroten?
+
+                <span class="small">(bv. afgesloten ruimte)</span>
+
+              - evalueren van deze maatregelen door Plek B.V.
+              - controle/audits
+          </div>
+
+            > “Als we zoveel moeite doen en kosten maken voor het afdekken van financieel risico bij leasecontracten,
+            laten we dan de risico’s die datalekken met zich meebrengen óók goed tackelen!”
+
+        </textarea>
+      </section>
+    </div>
+  </div>
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script>
+    Reveal.initialize({
+      history: true,
+      center: false,
+      slideNumber: true,
+      plugins: [RevealMarkdown]
+    });
+  </script>
+  <style>
+    .reveal li {
+      margin: .5em 0;
+    }
+    .reveal li p {
+      margin: 0;
+    }
+    .reveal ol {
+      margin-top: -1em;
+    }
+    .reveal ol ul {
+      margin-left: 0;
+      padding-left: 1em;
+    }
+    .reveal ol:nth-of-type(2) {
+      list-style-type: upper-alpha;
+      margin: -.5em 0 0 -12em;
+    }
+    .small {
+      font-size: .8em;
+    }
+    .reveal blockquote {
+      margin-top: 0;
+    }
+    #hoe {
+      margin-right: 12em;
+    }
+  </style>
+</body>
+
+</html>
