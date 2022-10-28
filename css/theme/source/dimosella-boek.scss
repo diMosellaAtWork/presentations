@@ -84,9 +84,14 @@ section.has-dark-background {
   margin-bottom: unset;
 }
 
+.reveal img.line-drawing {
+  background-color: rgba(229,38,19,50%);
+  border-radius: 10%;
+}
+
 .reveal .slide-number {
   background-color: unset;
-  color: #e52613;
+  color: rgb(229, 38, 19);
   font-size: .8em;
   font-weight: 700;
   right: 4em;
