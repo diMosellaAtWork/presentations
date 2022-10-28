@@ -79,3 +79,11 @@ section.has-dark-background {
   bottom: .8em;
   font-family: $mainFont;
 }
+
+.reveal tr.min th, .reveal tr.min td {
+  background-color: #ff005544;
+}
+
+.reveal tr.plus th, .reveal tr.plus td {
+  background-color: #00ff5544;
+}
